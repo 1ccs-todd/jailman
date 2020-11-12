@@ -22,8 +22,8 @@ jailcreate() {
 
 	echo "Checking config..."
 	local pluginrepo pluginports jailinterfaces jailip4 jailgateway setdhcp jailextraconf setextra reqvars reqvars version
-	
-	pluginrepo="https://github.com/jailmanager/iocage-plugins.git"
+
+	pluginrepo="https://github.com/1ccs-todd/iocage-plugins.git"
 	jailinterfaces="${jail}_interfaces"
 	jailip4="${jail}_ip4_addr"
 	jailgateway="${jail}_gateway"
@@ -60,10 +60,10 @@ jailcreate() {
 			exit 1
 		fi
 	fi
-	
+
 	reqvars=$(jq -r '.jailman | .variables | .required | .[]' "${global_dataset_iocage}/jails/${jail}/${plugin}.json")
 	global_reqvars=$(jq -r '.jailman | .variables | .required | .[]' "${SCRIPT_DIR}/includes/global.json")
-	
+
 	for reqvar in ${reqvars:-} ${global_reqvars:-}
 	do
 		varname=${jail}_${reqvar}
@@ -72,9 +72,9 @@ jailcreate() {
 			exit 1
 		fi
 	done
-	
+
 	pluginports="$(jq -r '.jailman | .ports' "${global_dataset_iocage}/jails/${jail}/${plugin}.json")"
-	
+
 	echo "creating jail config directory"
 	createmount "${jail}" "${global_dataset_config}" || exit 1
 	createmount "${jail}" "${global_dataset_config}"/"${jail}" /config || exit 1
