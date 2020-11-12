@@ -12,7 +12,7 @@ global:
     downloads: tank/downloads
 
 traefik:
-  blueprint: traefik
+  plugin: traefik
   ip4_addr: 192.168.1.200/24
   gateway: 192.168.1.1
   dashboard: true
@@ -31,19 +31,19 @@ traefik:
   influxdb_password: traefikmetricspass
 
 mariadb:
-  blueprint: mariadb
+  plugin: mariadb
   ip4_addr: 192.168.1.201/24
   gateway: 192.168.1.1
   root_password: ReplaceThisWithYourOwnRootPAssword
   domain_name: mariadb.local.example
 
 influxdb:
-  blueprint: influxdb
+  plugin: influxdb
   ip4_addr: 192.168.1.202/24
   gateway: 192.168.1.1
 
 grafana:
-  blueprint: grafana
+  plugin: grafana
   ip4_addr: 192.168.1.203/24
   gateway: 192.168.1.1
   password: grafana
@@ -52,52 +52,52 @@ grafana:
   link_traefik: traefikjail
 
 organizr:
-  blueprint: organizr
+  plugin: organizr
   ip4_addr: 192.168.1.204/24
   gateway: 192.168.1.1
 
 transmission:
-  blueprint: transmission
+  plugin: transmission
   ip4_addr: 192.168.1.205/24
   gateway: 192.168.1.1
 
 jackett:
-  blueprint: jackett
+  plugin: jackett
   ip4_addr: 192.168.1.206/24
   gateway: 192.168.1.1
 
 radarr:
-  blueprint: radarr
+  plugin: radarr
   ip4_addr: 192.168.1.207/24
   gateway: 192.168.1.1
 
 sonarr:
-  blueprint: sonarr
+  plugin: sonarr
   ip4_addr: 192.168.1.208/24
   gateway: 192.168.1.1
 
 lidarr:
-  blueprint: lidarr
+  plugin: lidarr
   ip4_addr: 192.168.1.209/24
   gateway: 192.168.1.1
 
 bazarr:
-  blueprint: bazarr
+  plugin: bazarr
   ip4_addr: 192.168.1.210/24
   gateway: 192.168.1.1
 
 tautulli:
-  blueprint: tautulli
+  plugin: tautulli
   ip4_addr: 192.168.1.211/24
   gateway: 192.168.1.1
 
 kms:
-  blueprint: kms
+  plugin: kms
   ip4_addr: 192.168.1.212/24
   gateway: 192.168.1.1
 
 nextcloud:
-  blueprint: nextcloud
+  plugin: nextcloud
   ip4_addr: 192.168.1.213/24
   gateway: 192.168.1.1
   time_zone: Europe/Amsterdam
@@ -107,7 +107,7 @@ nextcloud:
   mariadb_password: "PLEASEALSOPUTYOURPASSWORDHEREADIFFERNTONE"
 
 bitwarden:
-  blueprint: bitwarden
+  plugin: bitwarden
   ip4_addr: 192.168.1.214/24
   gateway: 192.168.1.1
   link_mariadb: mariadbjail
@@ -115,7 +115,7 @@ bitwarden:
   admin_token: "PUTYOURADMINTOKENHEREANDREMOVETHIS"
 
 unifi:
-  blueprint: unifi
+  plugin: unifi
   ip4_addr: 192.168.1.215/24
   gateway: 192.168.1.1
   poller: true
@@ -124,23 +124,23 @@ unifi:
   poller_password: upoller
 
 forked_daapd:
-  blueprint: forked_daapd
+  plugin: forked_daapd
   ip4_addr: 192.168.1.216/24
   gateway: 192.168.1.1
   itunes_media: /mnt/itunes
 
 plex:
-  blueprint: plex
+  plugin: plex
   ip4_addr: 192.168.1.217/24
   gateway: 192.168.1.1
   ramdisk: 3G
 
 sabnzbd:
-  blueprint: sabnzbd
+  plugin: sabnzbd
   ip4_addr: 192.168.1.218/24
   gateway: 192.168.1.1
 
 sabnzbd3:
-  blueprint: sabnzbd3
+  plugin: sabnzbd3
   ip4_addr: 192.168.1.219/24
   gateway: 192.168.1.1
